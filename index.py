@@ -44,8 +44,7 @@ def create_transaction(user_id, transaction_type, amount):
  date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
  new_balance = balance - amount if transaction_type == "Retiro" else balance + amount
  c.execute("UPDATE users SET balance = ? WHERE id = ?", (new_balance, user_id))
- c.execute("INSERT INTO transactions (user_id, transaction_type, amount, date, status) 
-VALUES (?, ?, ?, ?, ?)",(user_id, transaction_type, amount, date, "completada")) 
+ c.execute("INSERT INTO transactions (user_id, transaction_type, amount, date, status)VALUES (?, ?, ?, ?, ?)",(user_id, transaction_type, amount, date, "completada")) 
  conn.commit()
 
  st.success(f"{transaction_type} de ${amount} realizada correctamente")
