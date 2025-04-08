@@ -23,8 +23,7 @@ conn.commit()
 # --- Funciones con fallos controlados ---
 def register_user(username, password, initial_balance=1000):
  # No valida si el usuario ya existe (fallo)
- c.execute("INSERT INTO users (username, password, balance) VALUES (?, ?, ?)", 
-(username, password, initial_balance))
+ c.execute("INSERT INTO users (username, password, balance) VALUES (?, ?, ?)",(username, password, initial_balance))
  conn.commit()
 
 def login_user(username, password):
