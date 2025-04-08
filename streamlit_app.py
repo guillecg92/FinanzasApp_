@@ -70,7 +70,7 @@ def get_transactions(user_id):
     return c.fetchall()
 
 # --- Interfaz Streamlit ---
-st.title("FinanzasApp - Gestión Financiera (Versión con fallos)")
+st.title("FinanzasApp - Gestión Financiera (Versión Mejorada)")
 
 menu = ["Inicio", "Registro", "Login", "Realizar Transacción", "Ver Transacciones", "Ver Balance", "Cerrar Sesión"]
 choice = st.sidebar.selectbox("Menú", menu)
